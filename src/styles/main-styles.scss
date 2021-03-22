@@ -1,0 +1,58 @@
+* {
+  color: #343030;
+}
+
+.container {
+  max-width: 1168px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 27px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4, h5, h6 {
+  font-size: 21px;
+}
+
+h1, h3, h4 {
+  font-weight: 600;
+}
+
+h2, h5 {
+  font-weight: 400;
+}
+
+h6 {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+button {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: #403432;
+  color: #F4F6F9;
+  //border-radius: 5px;
+}
+
+button:hover {
+  background: #776763;
+}
+
+button:disabled {
+  background: #C1B4B1;
+}

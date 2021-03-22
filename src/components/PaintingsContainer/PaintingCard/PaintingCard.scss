@@ -1,0 +1,53 @@
+
+.paintCard {
+  border: 1px solid #cdcdcd;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
+
+  &__image {
+    img {
+      width: 280px;
+      height: 160px;
+    }
+  }
+
+  &__content {
+    .container {
+      padding: 25px;
+    }
+
+    &-title, &-author {
+      font-size: 18px;
+    }
+
+    &-author {
+      margin-bottom: 23px;
+    }
+
+    &__priceBlock {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-startPrice {
+        color: #A0A0A0;
+        text-decoration-line: line-through;
+        font-size: 14px;
+      }
+
+      &-price {
+        font-size: 16px;
+      }
+
+      &-price, &-startPrice {
+        line-height: 150%;
+      }
+
+      button {
+        padding: 14px 30px;
+      }
+    }
+  }
+}

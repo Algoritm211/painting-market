@@ -1,0 +1,44 @@
+
+.header {
+  border-bottom: 1px solid #cdcdcd;
+
+  .container {
+    height: 97px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      width: 48px;
+      height: 48px;
+
+    }
+
+    &-buttons {
+      a {
+        margin-left: 48px;
+        font-size: 14px;
+      }
+    }
+  }
+
+
+  &__search {
+    display: flex;
+
+    &-input {
+      border: 1px solid #cdcdcd;
+      padding: 14px;
+      width: 294px;
+    }
+
+    &-button {
+      padding: 14px 36px;
+    }
+  }
+}
