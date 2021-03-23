@@ -3,19 +3,17 @@ import './PaintingsContainer.scss'
 import {IPainting} from "../../types/types";
 import Venera from '../../assets/paintings/venera_born.png'
 import PaintingCard from "./PaintingCard/PaintingCard";
+import {observer} from "mobx-react-lite";
+import PaintingsStore from '../../store/paintingsStore'
 
 
-const Painting:IPainting = {
-  imgURL: Venera,
-  title: 'Рождение Венеры',
-  author: 'Сандро Боттичелли',
-  startPrice: '2 000 000 $',
-  price: '1 000 000 $'
-}
 
 const PaintingsContainer = () => {
+  const {paintings} = PaintingsStore
 
-  const paintingBlock = <PaintingCard painting={Painting} />
+  const paintingBlock = paintings.map((painting) => {
+    return <PaintingCard painting={painting} key={painting.id} />
+  })
 
   return (
     <div className={'paintings'}>
@@ -31,4 +29,4 @@ const PaintingsContainer = () => {
   );
 };
 
-export default PaintingsContainer;
+export default observer(PaintingsContainer);

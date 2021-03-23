@@ -47,6 +47,10 @@
 
       button {
         padding: 14px 30px;
+        &.inBasket {
+          padding: 14px 15px;
+          background: #5B3A32;
+        }
       }
     }
   }

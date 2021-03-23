@@ -1,12 +1,23 @@
 import React from 'react';
 import {IPainting} from "../../../types/types";
 import './PaintingCard.scss'
+import {observer} from "mobx-react-lite";
+import PaintingsStore from '../../../store/paintingsStore'
 
 type PropsType = {
   painting: IPainting
 }
 
 const PaintingCard: React.FC<PropsType> = ({painting}) => {
+  const {buyPainting, isLoading, removeFromBasket} = PaintingsStore
+
+  const onAddToBasket = () => {
+    buyPainting(painting.id)
+  }
+
+  const onRemoveFromBasket = () => {
+    removeFromBasket(painting.id)
+  }
 
   return (
     <div className={'paintCard'}>
@@ -32,7 +43,16 @@ const PaintingCard: React.FC<PropsType> = ({painting}) => {
                 {painting.price}
               </div>
             </div>
-            <button>Купить</button>
+            {!isLoading
+              ? <button
+                  className={painting.isInBasket ? 'inBasket' : ''}
+                  onClick={!painting.isInBasket ? onAddToBasket : onRemoveFromBasket}>
+                {!painting.isInBasket ? 'Купить': <><i className="fas fa-check" />В корзине</> }
+              </button>
+              : <button disabled className={'loaderBtn'}>
+                Loading...
+              </button>
+            }
           </div>
         </div>
       </div>
@@ -40,4 +60,4 @@ const PaintingCard: React.FC<PropsType> = ({painting}) => {
   );
 };
 
-export default PaintingCard;
+export default observer(PaintingCard);
