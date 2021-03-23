@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import headerLogo from '../../assets/header/logo-museum.png'
 import './Header.scss'
+import Navigation from "../MainLayout/Navigation/Navigation";
 
 const Header: React.FC = () => {
   const [searchValue, setSearchValue] = useState('')
@@ -8,18 +9,7 @@ const Header: React.FC = () => {
   return (
     <div className={'header'}>
       <div className={'container'}>
-        <div className={'header__menu'}>
-          <div className="header__menu-img">
-            <img src={headerLogo} alt="headerLogo"/>
-          </div>
-          <nav className={'header__menu-buttons'}>
-            <a href="#">Каталог</a>
-            <a href="#">Доставка</a>
-            <a href="#">Оплата</a>
-            <a href="#">Контакты</a>
-            <a href="#">О галерее</a>
-          </nav>
-        </div>
+        <Navigation />
         <div className="header__search">
           <input
             className={'header__search-input'}

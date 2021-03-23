@@ -3,6 +3,7 @@
 .paintings {
   //display: flex;
   //justify-content: flex-start;
+  min-height: calc(100vh - 97px - 96px - 45px);
   &__header {
     margin-top: 45px;
     margin-bottom: 39px;

@@ -16,6 +16,7 @@ const Painting:IPainting = {
 const PaintingsContainer = () => {
 
   const paintingBlock = <PaintingCard painting={Painting} />
+
   return (
     <div className={'paintings'}>
       <div className="container">

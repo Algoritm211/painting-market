@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 import PaintingsContainer from "../PaintingsContainer/PaintingsContainer";
+import Footer from "../Footer/Footer";
 
 const MainLayout = () => {
   return (
@@ -12,7 +13,7 @@ const MainLayout = () => {
        <PaintingsContainer />
       </main>
       <footer>
-        Footer
+        <Footer />
       </footer>
     </React.Fragment>
   );
