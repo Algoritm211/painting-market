@@ -4,6 +4,7 @@ import {paintingsTestAPI} from "../api/api";
 import Venera from "../assets/paintings/venera_born.png";
 import Dinner from "../assets/paintings/dinner.png";
 import Adam from "../assets/paintings/adam.png";
+import AnatomyLessons from '../assets/paintings/anatomy_lessons.png'
 
 
 class PaintingsStore {
@@ -15,7 +16,9 @@ class PaintingsStore {
       author: 'Сандро Боттичелли',
       startPrice: '2 000 000 $',
       price: '1 000 000 $',
-      isInBasket: false
+      isInBasket: false,
+      isLoading: false,
+      isSold: false
     },
     {
       id: 2,
@@ -23,7 +26,9 @@ class PaintingsStore {
       title: 'Тайная вечеря',
       author: 'Леонардо да Винчи',
       price: '3 000 000 $',
-      isInBasket: false
+      isInBasket: false,
+      isLoading: false,
+      isSold: false
     },
     {
       id: 3,
@@ -32,11 +37,24 @@ class PaintingsStore {
       author: 'Микеланджело',
       startPrice: '6 000 000 $',
       price: '5 000 000 $',
-      isInBasket: false
+      isInBasket: false,
+      isLoading: false,
+      isSold: false
+    },
+    {
+      id: 4,
+      imgURL: AnatomyLessons,
+      title: 'Уроки Анатомии',
+      author: 'Рембрандт',
+      startPrice: '6 000 000 $',
+      price: '5 000 000 $',
+      isInBasket: false,
+      isLoading: false,
+      isSold: true
     },
   ]
 
-  @observable isLoading: boolean = false
+  @observable searchString: string = ''
 
   constructor() {
     makeAutoObservable(this)
@@ -44,24 +62,25 @@ class PaintingsStore {
 
   @action
   buyPainting = async (id: number) => {
-    this.isLoading = true
+    let painting = this.paintings.find(painting => painting.id === id) as IPainting
+    painting.isLoading = true
     const data = await paintingsTestAPI.buyPainting()
-    let painting = this.paintings.find(painting => painting.id === id)
-    this.isLoading = false
-    if (painting) {
-      painting.isInBasket = true
-    }
+    painting.isLoading = false
+    painting.isInBasket = true
   }
 
   @action
   removeFromBasket = async (id: number) => {
-    this.isLoading = true
+    let painting = this.paintings.find(painting => painting.id === id) as IPainting
+    painting.isLoading = true
     const data = await paintingsTestAPI.buyPainting()
-    let painting = this.paintings.find(painting => painting.id === id)
-    this.isLoading = false
-    if (painting) {
-      painting.isInBasket = false
-    }
+    painting.isLoading = false
+    painting.isInBasket = false
+  }
+
+  @action
+  setSearchString = (searchStr: string) => {
+    this.searchString = searchStr
   }
 }
 

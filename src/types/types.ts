@@ -8,5 +8,7 @@ export interface IPainting {
   author: string,
   startPrice?: string,
   price: string
-  isInBasket: boolean
+  isInBasket: boolean,
+  isLoading: boolean
+  isSold: boolean
 }

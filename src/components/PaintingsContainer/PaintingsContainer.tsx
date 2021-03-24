@@ -9,9 +9,13 @@ import PaintingsStore from '../../store/paintingsStore'
 
 
 const PaintingsContainer = () => {
-  const {paintings} = PaintingsStore
+  const {paintings, searchString} = PaintingsStore
 
-  const paintingBlock = paintings.map((painting) => {
+  const visiblePaintings = paintings.filter(painting => {
+    return painting.title.toLowerCase().includes(searchString) || painting.author.toLowerCase().includes(searchString)
+  })
+
+  const paintingBlock = visiblePaintings.map((painting) => {
     return <PaintingCard painting={painting} key={painting.id} />
   })
 
