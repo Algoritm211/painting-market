@@ -1,0 +1,33 @@
+
+.contact {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+
+  &__image {
+    margin-right: 30px;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h6 {
+      font-size: 15px;
+      line-height: 30px;
+    }
+    &-body {
+      line-height: 150%;
+    }
+    &-buttons {
+      button {
+        padding: 10px 30px;
+      }
+    }
+  }
+}
