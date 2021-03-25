@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/painting-market/static/css/main.09180a34.chunk.css",
+    "main.js": "/painting-market/static/js/main.72b71e23.chunk.js",
+    "main.js.map": "/painting-market/static/js/main.72b71e23.chunk.js.map",
+    "runtime-main.js": "/painting-market/static/js/runtime-main.0b2d6d85.js",
+    "runtime-main.js.map": "/painting-market/static/js/runtime-main.0b2d6d85.js.map",
+    "static/js/2.4159ce40.chunk.js": "/painting-market/static/js/2.4159ce40.chunk.js",
+    "static/js/2.4159ce40.chunk.js.map": "/painting-market/static/js/2.4159ce40.chunk.js.map",
+    "static/js/3.8168f640.chunk.js": "/painting-market/static/js/3.8168f640.chunk.js",
+    "static/js/3.8168f640.chunk.js.map": "/painting-market/static/js/3.8168f640.chunk.js.map",
+    "index.html": "/painting-market/index.html",
+    "static/css/main.09180a34.chunk.css.map": "/painting-market/static/css/main.09180a34.chunk.css.map",
+    "static/js/2.4159ce40.chunk.js.LICENSE.txt": "/painting-market/static/js/2.4159ce40.chunk.js.LICENSE.txt",
+    "static/media/adam.3a46ac9d.png": "/painting-market/static/media/adam.3a46ac9d.png",
+    "static/media/anatomy_lessons.23d2c653.png": "/painting-market/static/media/anatomy_lessons.23d2c653.png",
+    "static/media/dinner.b54d09d0.png": "/painting-market/static/media/dinner.b54d09d0.png",
+    "static/media/venera_born.68d38065.png": "/painting-market/static/media/venera_born.68d38065.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b2d6d85.js",
+    "static/js/2.4159ce40.chunk.js",
+    "static/css/main.09180a34.chunk.css",
+    "static/js/main.72b71e23.chunk.js"
+  ]
+}
