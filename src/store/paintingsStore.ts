@@ -1,11 +1,10 @@
-import {action, makeAutoObservable, observable} from "mobx";
+import {action, makeAutoObservable, observable, runInAction} from "mobx";
 import {IPainting} from "../types/types";
 import {paintingsTestAPI} from "../api/api";
 import Venera from "../assets/paintings/venera_born.png";
 import Dinner from "../assets/paintings/dinner.png";
 import Adam from "../assets/paintings/adam.png";
 import AnatomyLessons from '../assets/paintings/anatomy_lessons.png'
-
 
 class PaintingsStore {
   @observable paintings: Array<IPainting> = [
@@ -64,18 +63,22 @@ class PaintingsStore {
   buyPainting = async (id: number) => {
     let painting = this.paintings.find(painting => painting.id === id) as IPainting
     painting.isLoading = true
-    const data = await paintingsTestAPI.buyPainting()
-    painting.isLoading = false
-    painting.isInBasket = true
+    await paintingsTestAPI.buyPainting()
+    runInAction(() => {
+      painting.isLoading = false
+      painting.isInBasket = true
+    })
   }
 
-  @action
+
   removeFromBasket = async (id: number) => {
     let painting = this.paintings.find(painting => painting.id === id) as IPainting
     painting.isLoading = true
-    const data = await paintingsTestAPI.buyPainting()
-    painting.isLoading = false
-    painting.isInBasket = false
+    await paintingsTestAPI.buyPainting()
+    runInAction(() => {
+      painting.isLoading = false
+      painting.isInBasket = false
+    })
   }
 
   @action

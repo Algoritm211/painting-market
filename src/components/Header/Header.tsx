@@ -3,12 +3,15 @@ import './Header.scss'
 import Navigation from "../MainLayout/Navigation/Navigation";
 import {observer} from "mobx-react-lite";
 import PaintingsStore from '../../store/paintingsStore'
+import { useHistory } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const {setSearchString} = PaintingsStore
+  const history = useHistory()
   const [searchValue, setSearchValue] = useState('')
   const [searchTimeout, setSearchTimeout] = useState<false | ReturnType<typeof setTimeout>>(false)
 
+  //TODO: finish work with search
   const onChangeSearch = (searchStr: string) => {
     setSearchValue(searchStr)
 
@@ -20,7 +23,11 @@ const Header: React.FC = () => {
       setTimeout(() => {
       setSearchString(searchStr)
     }, 700))
+  }
 
+  const onSearch = () => {
+    history.push('/catalog')
+    setSearchString(searchValue)
   }
 
   return (
@@ -32,9 +39,10 @@ const Header: React.FC = () => {
             className={'header__search-input'}
             placeholder={'Поиск по названию картины'}
             value={searchValue}
+            onKeyPress={(event) => event.key === 'Enter' && onSearch()}
             onChange={event => onChangeSearch(event.target.value)}
           />
-          <button className={'header__search-button'}>Найти</button>
+          <button className={'header__search-button'} onClick={onSearch}>Найти</button>
         </div>
       </div>
     </div>

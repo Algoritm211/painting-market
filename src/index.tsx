@@ -4,12 +4,14 @@ import './index.css';
 import './styles/main-styles.scss'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
+// import {BrowserRouter} from 'react-router-dom'
 
+// I use HashRouter only for GitHub pages
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
 

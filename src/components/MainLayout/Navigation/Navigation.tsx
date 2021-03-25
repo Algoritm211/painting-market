@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import headerLogo from "../../../assets/header/logo-museum.png";
+import headerLogo from "../../../assets/navigation/logo-museum.png";
 import './Navigation.scss'
 
 const Navigation: React.FC = () => {
