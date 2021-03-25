@@ -11,7 +11,6 @@ const Header: React.FC = () => {
   const [searchValue, setSearchValue] = useState('')
   const [searchTimeout, setSearchTimeout] = useState<false | ReturnType<typeof setTimeout>>(false)
 
-  //TODO: finish work with search
   const onChangeSearch = (searchStr: string) => {
     setSearchValue(searchStr)
 
